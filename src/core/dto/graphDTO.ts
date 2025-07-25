@@ -33,6 +33,10 @@ export interface ReanimatedGraphProps {
   containerStyle?: ViewProps['style'],
   graphStyle?: ViewProps['style'],
   textStyle?: TextProps['style'],
+  // stroke
+  strokeWidth?: number,
+  strokeLinecap?: 'butt' | 'round' | 'square',
+  strokeDasharray?: number[],
   // render functions
   renderXAxisLegend?: ( value: number, index: number ) => ReactNode | string | number,
   renderYAxisLegend?: ( value: number, index: number ) => ReactNode | string | number,
