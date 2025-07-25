@@ -55,6 +55,9 @@ const ReanimatedGraph = forwardRef<ReanimatedGraphPublicMethods, ReanimatedGraph
   containerStyle = {},
   graphStyle = {},
   textStyle = {},
+  strokeWidth = 2,
+  strokeLinecap = 'round',
+  strokeDasharray = [],
   renderYAxisLegend,
   renderXAxisLegend,
   renderExtremeValue,
@@ -221,7 +224,14 @@ const ReanimatedGraph = forwardRef<ReanimatedGraphPublicMethods, ReanimatedGraph
 
   const Graph = useMemo( () => (
     <GraphWrapper width={width} height={height} onLayout={onLayout} style={graphStyle}>
-      <GraphPath pathRef={pathRef} points={points} type={type} />
+      <GraphPath
+        pathRef={pathRef}
+        points={points}
+        type={type}
+        strokeWidth={strokeWidth}
+        strokeLinecap={strokeLinecap}
+        strokeDasharray={strokeDasharray}
+      />
       <SelectionArea
         width={graphWidth}
         height={height}
