@@ -48,7 +48,9 @@ const ReanimatedGraph = forwardRef<ReanimatedGraphPublicMethods, ReanimatedGraph
   yAxisLegendQuantity = AXIS_LEGEND_QUANTITY,
   showExtremeValues = true,
   showBlinkingDot = false,
+  blinkingDotRadius = 3,
   showSelectionDot = true,
+  selectionDotRadius = 4,
   selectionLines = 'both',
   selectionLineColor = '#D4D4D4',
   gestureEnabled = true,
@@ -240,6 +242,7 @@ const ReanimatedGraph = forwardRef<ReanimatedGraphPublicMethods, ReanimatedGraph
         selectionArea={selectionAreaValue}
         selectionAreaData={selectionAreaDataValue}
         showSelectionDot={showSelectionDot}
+        selectionDotRadius={selectionDotRadius}
         selectionLines={selectionLines}
         selectionLineColor={selectionLineColor}
         color={colorValue}
@@ -248,7 +251,7 @@ const ReanimatedGraph = forwardRef<ReanimatedGraphPublicMethods, ReanimatedGraph
         data={data}
         gestureEnabled={gestureEnabled}
       />
-      <BlinkingDot show={showBlinkingDotValue} color={colorValue} points={points} />
+      <BlinkingDot show={showBlinkingDotValue} color={colorValue} points={points} radius={blinkingDotRadius} />
       {showExtremeValues && (
       <Extremes
         width={graphWidth}
